@@ -10,6 +10,8 @@ import { HomeComponent } from './components/home/home.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { PostDetailComponent } from './components/post-detail/post-detail.component';
+import { TemplateDrivenFormComponent } from './components/template-driven-form/template-driven-form.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,12 +20,14 @@ import { PostDetailComponent } from './components/post-detail/post-detail.compon
     HomeComponent,
     NavBarComponent,
     PageNotFoundComponent,
-    PostDetailComponent
+    PostDetailComponent,
+    TemplateDrivenFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

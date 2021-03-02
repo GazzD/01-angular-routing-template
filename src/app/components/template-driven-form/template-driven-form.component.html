@@ -1,0 +1,33 @@
+<p>template-driven-form works!</p>
+
+<div>
+
+  <form (ngSubmit)="onSubmit()" #form="ngForm">
+    <label for="name">Name</label> <br>
+    <input [(ngModel)]="name" required type="text" #inputName="ngModel" name="name" /> <br>
+    <p class="error-msg" *ngIf="inputName.invalid && inputName.touched">Name is required</p>
+
+
+    <label for="email">Email</label> <br>
+    <input ngModel required email type="email" name="email" #inputEmail="ngModel" /> <br>
+    <p class="error-msg" *ngIf="inputEmail.invalid && inputEmail.touched">Wrong email format</p>
+
+    <label for="password">Password</label> <br>
+    <input ngModel required minlength="7" type="password" name="password" #inputPassword="ngModel" /> <br>
+    <p class="error-msg" *ngIf="inputPassword.invalid && inputPassword.touched">Wrong password format</p>
+
+    <label for="role">Role</label> <br>
+    <select required ngModel name="role">
+      <option value="user">User</option>
+      <option value="operator">Operator</option>
+      <option value="admin">Admin</option>
+    </select>
+    <br><br>
+
+    <input *ngFor="let item of list" type="text" #forInput{{item}} [value]="item">
+    <button type="submit" [disabled]="form.invalid">Submit</button>
+
+  </form>
+
+</div>
+
