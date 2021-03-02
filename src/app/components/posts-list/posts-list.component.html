@@ -1,0 +1,7 @@
+<p>posts-list works!</p>
+
+<h2 *ngFor="let post of posts">
+  <a [routerLink]="['/posts/', post.id]">
+    {{ post.title }}
+  </a>
+</h2>
