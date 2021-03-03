@@ -1,0 +1,21 @@
+<p>template-driven-form-javi works!</p>
+
+<div>
+  <form (ngSubmit)="onSubmit()" #form="ngForm">
+    <label for="userId">User Id</label><br>
+    <input type="number" ngModel required #inputUserId="ngModel" name="user"> <br>
+    <p class="error-msg" *ngIf="inputUserId.invalid && inputUserId.touched">User id is required</p>
+
+    <label for="title">Title</label><br>
+    <input type="text" ngModel required #inputTitle="ngModel" name="title"> <br>
+    <p class="error-msg" *ngIf="inputTitle.invalid && inputTitle.touched">Title is required</p>
+
+    <label for="title">Body</label><br>
+    <textarea ngModel required minlength="10" #inputBody="ngModel" name="body"></textarea> <br>
+    <p class="error-msg" *ngIf="inputBody.invalid && inputBody.touched">Body must have at least 10 characters</p>
+
+    <button type="submit" [disabled]="form.invalid || form.submitted" >Submit</button>
+
+  </form>
+
+</div>

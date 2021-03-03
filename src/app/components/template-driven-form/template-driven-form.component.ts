@@ -13,9 +13,11 @@ export class TemplateDrivenFormComponent implements OnInit {
 
   @ViewChild('form') form!: NgForm;
 
-  name: string = '';
+  name: string;
 
-  constructor() { }
+  constructor() {
+    this.name = '';
+  }
 
   ngOnInit(): void {
   }

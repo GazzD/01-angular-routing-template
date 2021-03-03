@@ -1,0 +1,33 @@
+<p>reactive-driven-form works!</p>
+
+<div>
+  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+
+    <label for="name">Name</label><br>
+    <input formControlName="name" type="text" name="name"><br>
+    <p class="error-msg" *ngIf="nameField.hasError('required') && nameField.touched">Name is required</p>
+    <p class="error-msg" *ngIf="nameField.hasError('invalidname')">Name is invalid</p>
+
+    <label for="email">Email</label><br>
+    <input formControlName="email" type="email" name="email"><br>
+    <p class="error-msg" *ngIf="emailField.hasError('required') && emailField.touched">Email is required</p>
+    <p class="error-msg" *ngIf="emailField.hasError('email')">Email is invalid</p>
+
+    <label for="password">Password</label><br>
+    <input formControlName="password" type="password" name="password"><br>
+    <p class="error-msg" *ngIf="passwordField.hasError('required') && passwordField.touched">Password is required</p>
+    <p class="error-msg" *ngIf="passwordField.hasError('minlength')">Password must be at least 7 characters</p>
+
+    <label for="role">Role</label> <br>
+    <select formControlName="role" name="role">
+      <option value="user">User</option>
+      <option value="operator">Operator</option>
+      <option value="admin">Admin</option>
+    </select>
+    <p class="error-msg" *ngIf="roleField.hasError('required') && roleField.touched">Role is required</p>
+    <br><br>
+
+    <button type="submit" [disabled]="form.invalid">Submit</button>
+
+  </form>
+</div>

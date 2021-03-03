@@ -11,7 +11,9 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { PostDetailComponent } from './components/post-detail/post-detail.component';
 import { TemplateDrivenFormComponent } from './components/template-driven-form/template-driven-form.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TemplateDrivenFormJaviComponent } from './components/template-driven-form-javi/template-driven-form-javi.component';
+import { ReactiveDrivenFormComponent } from './components/reactive-driven-form/reactive-driven-form.component';
 
 @NgModule({
   declarations: [
@@ -21,13 +23,16 @@ import { FormsModule } from '@angular/forms';
     NavBarComponent,
     PageNotFoundComponent,
     PostDetailComponent,
-    TemplateDrivenFormComponent
+    TemplateDrivenFormComponent,
+    TemplateDrivenFormJaviComponent,
+    ReactiveDrivenFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
