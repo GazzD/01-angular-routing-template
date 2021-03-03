@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +16,7 @@ import { TemplateDrivenFormComponent } from './components/template-driven-form/t
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TemplateDrivenFormJaviComponent } from './components/template-driven-form-javi/template-driven-form-javi.component';
 import { ReactiveDrivenFormComponent } from './components/reactive-driven-form/reactive-driven-form.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { ReactiveDrivenFormComponent } from './components/reactive-driven-form/r
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
